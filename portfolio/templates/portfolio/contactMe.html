@@ -1,0 +1,31 @@
+{% extends "portfolio/base.html" %}
+{% block content %}
+	<style type="text/css">
+		.btn-purple {
+  			background-color: #800080;
+  			color : #ffffff;
+		}
+		.btn-purple:hover {
+  			background-color: #ffffff;
+  			color : #800080;
+  			border-color: #800080;
+		}
+	</style>
+	<h1>Contact Me</h1>
+	<div class="content-section">
+		<form method="POST">
+			{% csrf_token %}
+			<label for="email">Email:</label><br>
+			<input type="email" name="email" id="email" placeholder="Enter your email">
+
+			<br><br>
+
+			<label for="message">Message:</label><br>
+			<textarea rows="10" cols="50" name="message" id="message" placeholder="Type your message here"></textarea>
+
+			<br><br>
+
+			<button class="btn btn-purple" type="submit">Send</button>
+		</form>
+	</div>
+{% endblock content %}
